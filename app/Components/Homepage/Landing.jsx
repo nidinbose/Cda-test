@@ -6,7 +6,7 @@ import PurpleButton from './Buttons'
 
 export default function Landing() {
   return (
-    <section className="relative w-full min-h-screen bg-[#F8E6FF] flex flex-col overflow-hidden">
+    <section className="relative w-full min-h-[90vh] md:h-screen bg-[#F8E6FF] flex flex-col overflow-hidden py-15">
 
       <motion.div
         initial={{ scale: 0.8, opacity: 0 }}
@@ -22,13 +22,13 @@ export default function Landing() {
           priority
         />
       </motion.div>
-      <div className="relative flex flex-1 flex-col items-center justify-center text-center px-4">
+      <div className="relative flex flex-1 flex-col items-center justify-center text-center px-4 mt-20">
 
         <motion.h1
           initial={{ y: 40, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="font-extrabold text-[#8A57A2] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl max-w-4xl leading-tight font-soraBold"
+          className="font-extrabold text-[#8A57A2] text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl max-w-4xl leading-tight font-soraBold"
         >
           CMS: THE FUTURE OF <br className="hidden sm:block" />
           CREATIVE EDUCATION.
@@ -43,12 +43,12 @@ export default function Landing() {
           <PurpleButton />
         </motion.div>
       </div>
-      <div className="w-full aspect-[16/5]" />
+      <div className="w-full aspect-[20/5]" />
       <motion.div
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.4, duration: 1 }}
-        className="absolute bottom-0 left-0 w-full aspect-[16/5] z-20"
+        className="absolute bottom-0 left-0 w-full aspect-[20/5] z-50"
       >
         <Image
           src="/Images/L1.png"
