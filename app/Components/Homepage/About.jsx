@@ -23,20 +23,17 @@ export default function About() {
             }}
 
             whileTap={{
-              x: 2,
-              y: 3,
-              scale: 0.96,
-              boxShadow: "0px 0px 0px #8A57A2"
-            }}
-
-            whileFocus={{
-              x: -4,
+              x: -4,   // 👈 SAME AS HOVER (important)
               y: -6,
               scale: 1.02,
               boxShadow: "-19px 10px 0px #8A57A2"
             }}
 
-            transition={{ type: "spring", stiffness: 300 }}
+            transition={{
+              type: "spring",
+              stiffness: 200,
+              damping: 15
+            }}
 
             className="
               relative
@@ -48,9 +45,8 @@ export default function About() {
               rounded-[80px]
               overflow-hidden
               cursor-pointer
-              touch-manipulation
+              active:scale-[0.98]   /* 👈 helps mobile press feel */
             "
-            tabIndex={0}
           >
             <Image
               src="/Images/A1.png"
@@ -103,16 +99,18 @@ export default function About() {
                 y: -3,
                 boxShadow: "-4px 6px 0px #D7B6F5"
               }}
+
               whileTap={{
-                y: 2,
-                scale: 0.96,
-                boxShadow: "0px 0px 0px #D7B6F5"
-              }}
-              whileFocus={{
-                y: -3,
+                y: -3,   // 👈 SAME AS HOVER
                 boxShadow: "-4px 6px 0px #D7B6F5"
               }}
-              transition={{ type: "spring", stiffness: 300 }}
+
+              transition={{
+                type: "spring",
+                stiffness: 200,
+                damping: 15
+              }}
+
               className="
                 mt-8
                 px-8 py-3
@@ -121,9 +119,8 @@ export default function About() {
                 border border-[#D7B6F5]
                 font-semibold
                 cursor-pointer
-                touch-manipulation
+                active:scale-[0.96]
               "
-              tabIndex={0}
             >
               Get to know more
             </motion.button>
