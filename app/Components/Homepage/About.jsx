@@ -8,7 +8,9 @@ export default function About() {
     <section className="w-full bg-[#4B1F5C] py-16 sm:py-20 md:py-24 ">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
-       <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+
+          {/* IMAGE CARD */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -27,28 +29,38 @@ export default function About() {
               boxShadow: "0px 0px 0px #8A57A2"
             }}
 
+            whileFocus={{
+              x: -4,
+              y: -6,
+              scale: 1.02,
+              boxShadow: "-19px 10px 0px #8A57A2"
+            }}
+
             transition={{ type: "spring", stiffness: 300 }}
 
             className="
               relative
-              w-full max-w-md
-
+              w-70 md:w-full max-w-md
               h-[260px]
               sm:h-[320px]
               md:h-[380px]
               lg:h-[420px]
-
               rounded-[80px]
               overflow-hidden
+              cursor-pointer
+              touch-manipulation
             "
+            tabIndex={0}
           >
             <Image
               src="/Images/A1.png"
               alt="students"
               fill
-              className="object-cover"
+              className="object-cover pointer-events-none"
             />
           </motion.div>
+
+          {/* TEXT CONTENT */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -59,7 +71,6 @@ export default function About() {
               text-[#D7B6F5]
               font-extrabold
               leading-[1.05]
-
               text-3xl
               sm:text-4xl
               md:text-5xl
@@ -72,6 +83,7 @@ export default function About() {
               ENTREPRENEURSHIP <br />
               (AMME)
             </h2>
+
             <p className="
               mt-6
               text-[#E9D8FF]/80
@@ -82,9 +94,10 @@ export default function About() {
               max-w-lg mx-auto lg:mx-0
             ">
               Hands-on program that trains you to turn strong ideas into real execution using Creativity, Data, and AI. Designed for future-ready marketers, brand builders, and startup founders, AMME is all about learning by doing.
-              
+
               A hands-on program that trains you from building big ideas to executing them effectively. Using real-world tools, backed by bold thinking, you’ll work with Creativity, Data, and AI to build marketing that delivers.
             </p>
+
             <motion.button
               whileHover={{
                 y: -3,
@@ -95,6 +108,10 @@ export default function About() {
                 scale: 0.96,
                 boxShadow: "0px 0px 0px #D7B6F5"
               }}
+              whileFocus={{
+                y: -3,
+                boxShadow: "-4px 6px 0px #D7B6F5"
+              }}
               transition={{ type: "spring", stiffness: 300 }}
               className="
                 mt-8
@@ -103,7 +120,10 @@ export default function About() {
                 text-[#D7B6F5]
                 border border-[#D7B6F5]
                 font-semibold
+                cursor-pointer
+                touch-manipulation
               "
+              tabIndex={0}
             >
               Get to know more
             </motion.button>
@@ -111,7 +131,6 @@ export default function About() {
           </motion.div>
 
         </div>
-
       </div>
     </section>
   )
