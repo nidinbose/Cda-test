@@ -10,10 +10,13 @@ import BlogSection from "./Components/Homepage/Blog";
 import SocialSection from "./Components/Homepage/Social";
 import Vlog from "./Components/Homepage/Vlog";
 import PinStackSection from "./Components/Homepage/Pincard";
+import Navbar from "./Components/Homepage/Navbar";
+import Footer from "./Components/Homepage/Footer";
 
 export default function Home() {
   return (
    <div className="overflow-x-hidden">
+    <Navbar/>
     <Landing/>
     <About/>
     <Startup/>
@@ -27,6 +30,7 @@ export default function Home() {
     <IdeaSection/>
     <BlogSection/>
     <SocialSection/>
+    <Footer/>
 
    </div>
   );  

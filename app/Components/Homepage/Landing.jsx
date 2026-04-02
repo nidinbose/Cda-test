@@ -6,7 +6,7 @@ import PurpleButton from './Buttons'
 
 export default function Landing() {
   return (
-    <section className="relative w-full min-h-[90vh] md:h-screen bg-[#F8E6FF] flex flex-col overflow-hidden py-15">
+    <section className="relative w-full min-h-[90vh] md:h-screen bg-[#F8E6FF] flex flex-col overflow-hidden ">
 
       <motion.div
         initial={{ scale: 0.8, opacity: 0 }}
@@ -22,7 +22,7 @@ export default function Landing() {
           priority
         />
       </motion.div>
-      <div className="relative flex flex-1 flex-col items-center justify-center text-center px-4 mt-20">
+      <div className="relative flex flex-1 flex-col items-center justify-center text-center px-4 mt-20 mb-10">
 
         <motion.h1
           initial={{ y: 40, opacity: 0 }}

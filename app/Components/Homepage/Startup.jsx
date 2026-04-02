@@ -5,56 +5,63 @@ import Image from 'next/image'
 
 export default function Startup() {
   return (
-    <section className="bg-[#EEDCF7] py-24 overflow-hidden">
-      <div className="max-w-7xl mx-auto relative px-4">
+    <section className="bg-[#EEDCF7] py-20 overflow-hidden relative">
+      <div className="max-w-7xl mx-auto px-6 relative">
 
-        {/* FLOATING IMAGES */}
+        {/* ================= FLOATING IMAGES ================= */}
+
+        {/* CAMERA (LEFT) */}
         <Image
           src="/Images/C1.png"
           alt="camera"
           width={260}
           height={260}
-          className="absolute left-0 top-20 rotate-[-15deg] hidden md:block"
+          className="absolute left-[-60px] top-[120px] rotate-[-12deg] z-10 hidden md:block"
         />
 
+        {/* LAPTOP (CENTER TOP) */}
         <Image
           src="/Images/C2.png"
           alt="laptop"
-          width={140}
+          width={180}
           height={140}
-          className="absolute left-[45%] top-16 rotate-[10deg] hidden md:block"
+          className="absolute left-1/2 -translate-x-1/2 top-[20px] rotate-[8deg] z-10 hidden md:block"
         />
 
+        {/* CLAP (RIGHT TOP) */}
         <Image
           src="/Images/C3.png"
           alt="clap"
           width={120}
           height={120}
-          className="absolute right-0 top-0 rotate-[20deg] hidden md:block"
+          className="absolute right-[-40px] top-[20px] rotate-[18deg] z-10 hidden md:block"
         />
 
-        {/* TITLE */}
-        <div className="text-center mb-20">
+        {/* ================= TITLE ================= */}
+        <div className="text-center mb-20 relative z-20">
+
           <motion.h2
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             className="
-              font-extrabold 
+              font-soraBold
               text-[#7A4BA0]
-              text-5xl
-              sm:text-6xl
-              md:text-7xl
-              lg:text-[100px]
+              leading-[0.9]
               tracking-tight
+              text-[48px]
+              sm:text-[70px]
+              md:text-[100px]
+              lg:text-[130px]
+              flex items-center justify-center gap-4
             "
           >
             You can become
           </motion.h2>
         </div>
 
-        {/* GRID */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-50">
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:py-25 xl:py-30">
 
           {[
             "Marketing Manager",
@@ -67,18 +74,17 @@ export default function Startup() {
           ].map((item, i) => (
             <motion.div
               key={i}
-              whileHover={{ y: -8 }}
-              whileTap={{ scale: 0.96 }}
+              whileHover={{ y: -10 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ type: "spring", stiffness: 200 }}
               className={`
                 rounded-[40px]
                 p-8
                 flex items-start
-                text-left
-                font-bold
+                font-soraBold
                 leading-tight
                 min-h-[140px]
-
-                text-2xl sm:text-3xl md:text-[34px]
+                text-[40px]
 
                 ${i === 0 && 'bg-[#5C3A6D] text-white'}
                 ${i === 1 && 'bg-[#CFA6E6] text-[#4B1F5C]'}
@@ -95,14 +101,14 @@ export default function Startup() {
 
           {/* APPLY NOW */}
           <motion.div
-            whileHover={{ y: -8 }}
-            whileTap={{ scale: 0.96 }}
+            whileHover={{ y: -10 }}
+            whileTap={{ scale: 0.97 }}
             className="
               sm:col-span-2 lg:col-span-1
               rounded-[40px]
               flex items-center justify-center
-              font-bold
-              text-2xl sm:text-3xl md:text-[34px]
+              font-soraBold
+              text-[40px]
               min-h-[140px]
               text-white
               bg-gradient-to-r from-[#7A4BA0] to-[#A86EDC]

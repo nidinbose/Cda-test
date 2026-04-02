@@ -102,7 +102,7 @@ export default function Creators() {
               repeat: Infinity,
               ease: "easeInOut"
             }}
-            className="border-[14px] sm:border-[16px] md:border-[19px] border-[#5B3B6E] rounded-[40px] sm:rounded-[60px] md:rounded-[90px] overflow-hidden w-[260px] sm:w-[320px] md:w-[380px] lg:w-[420px]"
+            className="border-[14px] sm:border-[18px] md:border-[19px] border-[#5B3B6E] rounded-[40px] sm:rounded-[60px] md:rounded-[90px] overflow-hidden w-[260px] sm:w-[320px] md:w-[380px] lg:w-[420px]"
           >
             <Image
               src="/Images/C5.jpg"
