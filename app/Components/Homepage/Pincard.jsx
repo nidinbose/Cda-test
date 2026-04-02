@@ -6,53 +6,61 @@ import Image from 'next/image'
 const cards = [
   {
     title: 'Content Creation',
-    desc: 'Get hands-on, connect with mentors, and work on real projects that make noise.',
-    image: '/Images/Cs1.jpg',
+    desc: 'Get hands-on, connect with mentors, and work on real projects that make noise. Whether you re into content creation, branding, digital marketing, or design — this is your space to explore, experiment, and elevate your craft.',
+    image: '/Images/SS1.jpg',
     bg: 'bg-[#46A6A1]',
   },
   {
     title: 'Art Direction',
-    desc: 'Explore branding, digital marketing, and design with real-world execution.',
-    image: '/Images/Cs2.jpg',
+    desc: 'Get hands-on, connect with mentors, and work on real projects that make noise. Whether youre into content creation, branding, digital marketing, or design — this is your space to explore, experiment, and elevate your craft.',
+    image: '/Images/SS2.jpg',
     bg: 'bg-[#E5B90B]',
   },
   {
     title: 'Digital Marketing',
-    desc: 'Learn performance marketing, growth strategies, and experimentation.',
-    image: '/Images/Cs3.jpg',
+    desc: 'Get hands-on, connect with mentors, and work on real projects that make noise. Whether youre into content creation, branding, digital marketing, or design — this is your space to explore, experiment, and elevate your craft.',
+    image: '/Images/SS3.jpg',
     bg: 'bg-[#7B4D9E]',
   },
 ]
 
 export default function PinStackSection() {
   return (
-    <section className="bg-[#E6D9EF] py-20 px-4 md:px-10">
+    <section className="bg-[#E6D9EF] py-24 px-4 md:px-10">
 
       {/* TITLE */}
-      <div className="max-w-7xl mx-auto mb-16">
-        <h2 className="text-3xl md:text-5xl font-soraBold text-[#7B4D9E]">
+      <div className="max-w-7xl mx-auto mb-20">
+        <h2 className="text-3xl md:text-5xl font-bold text-[#7B4D9E]">
           AMME Includes :
         </h2>
       </div>
 
-      {/* STACK */}
-      <div className="max-w-7xl mx-auto space-y-32">
+      {/* STACK CONTAINER */}
+      <div className="max-w-7xl mx-auto relative">
 
         {cards.map((card, i) => (
           <motion.div
             key={i}
-            initial={{ y: 80, opacity: 0, scale: 0.95 }}
-            whileInView={{ y: 0, opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: i * 0.15 }}
-            viewport={{ once: true }}
-            className={`sticky top-24 rounded-[40px] p-6 md:p-12 shadow-2xl ${card.bg}`}
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: i * 0.2 }}
+            viewport={{ once: false }}
+            className={`
+              sticky top-[100px]
+              rounded-[40px]
+              p-6 md:p-12
+              shadow-2xl
+              ${card.bg}
+            `}
             style={{
-              zIndex: cards.length - i,
+              zIndex: 10 + i,
+              marginTop: i === 0 ? '0px' : '-120px', 
+              transform: `scale(${1 - i * 0.04})`,  
             }}
           >
 
             {/* INNER */}
-            <div className={`flex flex-col md:flex-row items-center gap-8 md:gap-16 ${i % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
+            <div className={`flex flex-col md:flex-row items-center gap-8 md:gap-16 ${i % 2 ? 'md:flex-row' : ''}`}>
 
               {/* IMAGE */}
               <motion.div
@@ -69,11 +77,11 @@ export default function PinStackSection() {
 
               {/* TEXT */}
               <div className="text-white md:w-[60%]">
-                <h3 className="text-3xl md:text-5xl font-soraBold leading-tight">
+                <h3 className="text-3xl md:text-6xl max-w-md font-soraBold leading-tight">
                   {card.title}
                 </h3>
 
-                <p className="mt-4 text-sm md:text-base opacity-90 max-w-md">
+                <p className="mt-4 text-xs md:text-sm font-soraRegular opacity-90 max-w-md">
                   {card.desc}
                 </p>
               </div>
